@@ -15,53 +15,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="7" (click)="addNumber('7')">7</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="8" (click)="addNumber('8')">8</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="9" (click)="addNumber('9')">9</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-act" value="/" (click)="addAct('/')">/</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="4" (click)="addNumber('4')">4</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="5" (click)="addNumber('5')">5</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="6" (click)="addNumber('6')">6</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-act" value="*" (click)="addAct('*')">*</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="1" (click)="addNumber('1')">1</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="2" (click)="addNumber('2')">2</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="3" (click)="addNumber('3')">3</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-act" value="-" (click)="addAct('-')">-</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="0" (click)="addNumber('0')">0</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="." (click)="addComma()">.</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-act" value="=" (click)="funcAnswer()">=</button>
-                    </div>
-                    <div class="col-xs-3">
-                        <button class="btn btn-default form-control btn-form color-number btn-act" value="+" (click)="addAct('+')">+</button>
+                    <div class="col-xs-3" *ngFor="let button of buttonsList">
+                        <button class="btn btn-default form-control btn-form color-number btn-number" value="7" (click)="addSymbol(button)">{{button}}</button>
                     </div>
                 </div>
             </div>
