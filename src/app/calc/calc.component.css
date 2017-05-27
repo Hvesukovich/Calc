@@ -11,6 +11,20 @@
 
 }
 
+.btn.active.focus, .btn.active:focus,
+.btn.focus, .btn:active.focus,
+.btn:active:focus, .btn:focus {
+    outline: none;
+}
+
+.all-btn-form{
+    margin-top: 10px;
+}
+
+.row>.col-xs-3{
+    margin: 5px 0 0 0;
+}
+
 .screen{
     margin-bottom: -15px;
     text-align: right;
