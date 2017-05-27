@@ -9,8 +9,8 @@ export class CalcComponent {
     private arr = []; // Массив ВСЕХ чисел введённых в одном примере
     private screen_info: string = null; // Отображение вводимых данных
     // viewAct: string = null; // Отображение полностью всего примера
-    private act: string = null; // Проверка на нахождение действий(+-*/)
-    private comma: boolean = false; // Проверка на нахождении в числе запятой
+    // private act: string = null; // Проверка на нахождение действий(+-*/)
+    // private comma: boolean = false; // Проверка на нахождении в числе запятой
     private simbol: string; // Последний символ в последнем элементе массива "arr"
     private characters: string; // Последний элемент в массиве "arr"
     private answer = ''; // Ответ
