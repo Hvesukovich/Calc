@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-calc',
@@ -32,7 +32,8 @@ export class CalcComponent {
         this.simbol = '';
     }
 
-    // Удаляю последний элемнт в последнем элементе массива, Если последний элемент пустой, то удаляю последний элемент. Вывожу пример на экран
+    // Удаляю последний элемнт в последнем элементе массива,
+    // Если последний элемент пустой, то удаляю последний элемент. Вывожу пример на экран
     private deleteLastCharacter() {
         if (this.arr.length > 0) {
             this.arr[this.arr.length - 1] = this.arr[this.arr.length - 1].substr(0, this.arr[this.arr.length - 1].length - 1);
@@ -107,19 +108,7 @@ export class CalcComponent {
             ((this.arr.length === 1) && (this.simbol === '-') && (act === '+'))
         ) {
             this.deleteLastCharacter();
-        } else if (
-            // тут нужна проверка на число
-            ((this.simbol === '0') && (this.characters !== '0')) ||
-            (this.simbol === '1') ||
-            (this.simbol === '2') ||
-            (this.simbol === '3') ||
-            (this.simbol === '4') ||
-            (this.simbol === '5') ||
-            (this.simbol === '6') ||
-            (this.simbol === '7') ||
-            (this.simbol === '8') ||
-            (this.simbol === '9')
-        ) {
+        } else if (this.numbersList.indexOf(this.simbol) !== -1) {// тут нужна проверка на число
             this.arr.push(act);
         }else if (
             (this.symbolsList.indexOf(this.simbol) === -1) && (this.arr.length > 1)
@@ -140,12 +129,7 @@ export class CalcComponent {
                 this.answer += this.arr[i];
             }
             if (this.simbol !== '.') {
-                if (
-                    this.simbol === '+' ||
-                    this.simbol === '-' ||
-                    this.simbol === '*' ||
-                    this.simbol === '/'
-                ) {
+                if (this.symbolsList.indexOf(this.simbol) !== -1) {
                     this.answer = this.answer.substr(0, this.answer.length - 1);
                 }
                 this.answer = eval(this.answer) + '';
