@@ -82,8 +82,6 @@ export class CalcComponent {
         }
 
         if ((this.arr.length === 0) && (this.arr[0] === undefined)) {
-            console.log(comma);
-            console.log(this.simbol);
             this.arr[0] = '0.';
         }else if (
             (comma !== '.') && (this.symbolsList.indexOf(this.simbol) !== -1)
@@ -116,7 +114,6 @@ export class CalcComponent {
             this.deleteLastCharacter();
             this.arr.push(act);
         }
-        console.log('arr = ' + this.arr);
         this.example();
     }
 
@@ -132,16 +129,7 @@ export class CalcComponent {
                 if (this.symbolsList.indexOf(this.simbol) !== -1) {
                     this.answer = this.answer.substr(0, this.answer.length - 1);
                 }
-                this.answer = parseFloat(eval(this.answer)).toFixed(6);
-
-                // let arr = this.answer.split('.');
-                // if (arr.length === 2) {
-                //     arr[1] = parseInt(arr[1]).toString ();
-                //     this.answer = arr[0] + '.' + arr[1];
-                // }
-                //
-                // console.log(this.answer.split('.'));
-
+                this.answer = (Math.round(eval(this.answer) * 1000000000000) / 1000000000000).toString();
                 this.arr = [this.answer];
                 this.example();
                 this.simbol = '';
@@ -157,15 +145,9 @@ export class CalcComponent {
 
     // Построение всего примера из массива чисел
     private example() {
-        console.log(this.arr);
-
         this.screen_info = '';
         for (let i = 0; i < this.arr.length; i++) {
             this.screen_info += this.arr[i];
         }
-
-        console.log(this.screen_info);
-
-        // this.screen_info = parseFloat(this.screen_info).toFixed(2);
     }
 }
