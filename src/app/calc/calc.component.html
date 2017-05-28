@@ -18,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-3" *ngFor="let button of buttonsList">
-                        <button class="btn btn-default form-control btn-form color-number btn-number" value="7" (click)="addSymbol(button)">{{button}}</button>
+                        <button class="btn btn-default form-control btn-form color-number btn-number" (click)="addSymbol(button)">{{button}}</button>
                     </div>
                 </div>
             </div>

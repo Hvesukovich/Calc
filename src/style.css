@@ -5,6 +5,6 @@ html, body, app-root {
 
 app-root{
     display: block;
-    min-width: 350px;
+    min-width: 320px;
     position: relative;
 }
